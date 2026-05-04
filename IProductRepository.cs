@@ -1,6 +1,9 @@
-﻿namespace SecondSiteArchitecture.Data.Reposetories
+using SecondSiteArchitecture.Models;
+
+namespace SecondSiteArchitecture.Data.Reposetories
 {
-    public class IProductRepository
+    public interface IProductRepository : IGenericRepository<Product>
     {
+         IQueryable<Product> SearchProduct(string Name);
     }
 }
