@@ -1,6 +1,12 @@
-﻿namespace SecondSiteArchitecture.Data.Reposetories
+using SecondSiteArchitecture.Models;
+
+namespace SecondSiteArchitecture.Data.Reposetories
 {
-    public class IOrderRepository
+    public interface IOrderRepository : IGenericRepository<Order>
     {
+         Task<Order> AddOrder(Order order);
+        
+            
+        
     }
 }
