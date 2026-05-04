@@ -1,6 +1,11 @@
-﻿namespace SecondSiteArchitecture.Data.Reposetories
+namespace SecondSiteArchitecture.Data.Reposetories
 {
-    public interface IGenericRepository
+    public interface IGenericRepository<T>  where T : class
     {
+        Task<IEnumerable<T>> GetAll();
+        Task<T> GetById(int id);
+        Task Add(T entity);
+        void Update(T entity);
+        void Delete(int id);
     }
 }
